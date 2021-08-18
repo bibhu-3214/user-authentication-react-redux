@@ -21,7 +21,10 @@ const Account = () => {
    }, []);
 
    return (
-      <div className="container w-50 text-center mt-5 border border-4 p-3 bg-light">
+      <div
+         className="container w-50 text-center mt-5"
+         style={{ backgroundColor: '#eeeeee', padding: '20px' }}
+      >
          <h2>
             Username <h4 className="text-primary">{user.username}</h4>
          </h2>

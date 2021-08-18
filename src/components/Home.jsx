@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
    return (
-      <div className="container  w-50 mt-5">
+      <div className="container  w-75 text-center mt-5">
          <h4 className="text-black-50 mb-3">
             Components let you split the UI into independent, reusable pieces,
             and think about each piece in isolation. This page provides an

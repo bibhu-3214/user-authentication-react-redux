@@ -9,32 +9,34 @@ import NotesContainer from './My Notes/NotesContainer';
 const NavBar = (props) => {
    const { isLoggedIn, handleAuth } = props;
    return (
-      <div>
+      <>
          <h1
-            className="display-5 mb-3 text-center text-primary"
-            style={{ fontWeight: 'lighter' }}
+            className="display-5 text-center"
+            style={{
+               fontWeight: 'initial',
+               color: '#1a237e',
+               backgroundColor: '#fafafa',
+               padding: '20px',
+            }}
          >
             USER AUTHENTICATION
-            <hr style={{ width: '50%', marginLeft: '25%' }} />
          </h1>
 
          <ul
             className="nav mb-3 text-center"
             style={{
-               width: '60%',
                textAlign: 'center',
-               marginLeft: '20%',
-               justifyContent: 'space-between',
-               display: 'flex',
-               flexDirection: 'row',
+               justifyContent: 'space-around',
+               backgroundColor: '#f5f5f5',
             }}
          >
             <li className="nav-item">
                <Link
                   to="/"
-                  className="nav-link text-danger"
+                  className="nav-link"
                   style={{
                      fontSize: '30px',
+                     color: '#673ab7',
                      textTransform: 'capitalize',
                   }}
                >
@@ -46,9 +48,10 @@ const NavBar = (props) => {
                   <li className="nav-item">
                      <Link
                         to="/account"
-                        className="nav-link text-danger"
+                        className="nav-link"
                         style={{
                            fontSize: '30px',
+                           color: '#673ab7',
                            textTransform: 'capitalize',
                         }}
                      >
@@ -58,9 +61,10 @@ const NavBar = (props) => {
                   <li className="nav-item">
                      <Link
                         to="/mynotes"
-                        className="nav-link text-danger"
+                        className="nav-link"
                         style={{
                            fontSize: '30px',
+                           color: '#673ab7',
                            textTransform: 'capitalize',
                         }}
                      >
@@ -70,9 +74,10 @@ const NavBar = (props) => {
                   <li className="nav-item">
                      <Link
                         to=""
-                        className="nav-link text-danger"
+                        className="nav-link"
                         style={{
                            fontSize: '30px',
+                           color: '#673ab7',
                            textTransform: 'capitalize',
                         }}
                         onClick={() => {
@@ -91,9 +96,10 @@ const NavBar = (props) => {
                   <li className="nav-item">
                      <Link
                         to="/register"
-                        className="nav-link text-danger"
+                        className="nav-link"
                         style={{
                            fontSize: '30px',
+                           color: '#673ab7',
                            textTransform: 'capitalize',
                         }}
                      >
@@ -103,9 +109,10 @@ const NavBar = (props) => {
                   <li className="nav-item">
                      <Link
                         to="/Login"
-                        className="nav-link text-danger"
+                        className="nav-link"
                         style={{
                            fontSize: '30px',
+                           color: '#673ab7',
                            textTransform: 'capitalize',
                         }}
                      >
@@ -115,7 +122,6 @@ const NavBar = (props) => {
                </>
             )}
          </ul>
-         <hr style={{ width: '70%', marginLeft: '15%' }} />
 
          <Switch>
             <Route path="/mynotes" component={NotesContainer} />
@@ -129,7 +135,7 @@ const NavBar = (props) => {
             <Route path="/register" component={Register} />
             <Route path="/" component={Home} />
          </Switch>
-      </div>
+      </>
    );
 };
 

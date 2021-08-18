@@ -13,20 +13,20 @@ const NotesList = (props) => {
    }, [dispatch]);
 
    return (
-      <div>
+      <>
          {notes.length === 0 ? (
-            <div>
+            <>
                <h4 className="display-5">No Notes found...</h4>
                <h5 className="diplay-6">Add your first Notes !</h5>
-            </div>
+            </>
          ) : (
-            <div>
+            <>
                {notes.map((note, id) => {
                   return <NotesItem key={id} {...note} />;
                })}
-            </div>
+            </>
          )}
-      </div>
+      </>
    );
 };
 

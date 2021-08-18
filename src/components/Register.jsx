@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../Redux/actions/usersAction';
+import { register } from '../Redux/actions/usersAction';
 
-const Login = (props) => {
+const Register = (props) => {
+   const [username, setUsername] = useState('');
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
 
    const dispatch = useDispatch();
 
    const handleChange = (e) => {
-      if (e.target.name === 'email') {
+      if (e.target.name === 'username') {
+         setUsername(e.target.value);
+      } else if (e.target.name === 'email') {
          setEmail(e.target.value);
       } else if (e.target.name === 'password') {
          setPassword(e.target.value);
@@ -18,22 +21,38 @@ const Login = (props) => {
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      const formData = { email: email, password: password };
-      const redirectToHome = () => {
-         props.history.push('/');
-         props.handleAuth();
+      const formData = { username: username, email: email, password: password };
+      const redirectToLogin = () => {
+         props.history.push('/login');
       };
-      dispatch(login(formData, redirectToHome));
+      const resetForm = () => {
+         setUsername('');
+         setEmail('');
+         setPassword('');
+      };
+      dispatch(register(formData, resetForm, redirectToLogin));
    };
 
    return (
       <div className="container text-center">
-         <h2 className="display-5 mb-4 text-success">Login Form</h2>
+         <h1 className="mb-4" style={{ color: '#2962ff' }}>
+            Sign Up
+         </h1>
          <form
-            className="row g-3 "
-            onSubmit={handleSubmit}
+            className="row g-3"
             style={{ width: '60%', marginLeft: '25%', textAlign: 'center' }}
+            onSubmit={handleSubmit}
          >
+            <div className="col-sm-10 mb-3">
+               <input
+                  className="form-control"
+                  type="text"
+                  name="username"
+                  value={username}
+                  placeholder="enter your name"
+                  onChange={handleChange}
+               />
+            </div>
             <div className="col-sm-10 mb-3">
                <input
                   className="form-control"
@@ -42,7 +61,6 @@ const Login = (props) => {
                   value={email}
                   placeholder="enter your email"
                   onChange={handleChange}
-                  required
                />
             </div>
             <div className="col-sm-10 mb-3">
@@ -53,15 +71,19 @@ const Login = (props) => {
                   value={password}
                   placeholder="enter your password"
                   onChange={handleChange}
-                  required
                />
             </div>
             <div className="col-sm-10">
-               <input className="btn btn-primary mb-3" type="submit" />
+               <input
+                  className="btn btn-primary mb-3"
+                  value="Register"
+                  type="submit"
+                  style={{ width: '100%' }}
+               />
             </div>
          </form>
       </div>
    );
 };
 
-export default Login;
+export default Register;

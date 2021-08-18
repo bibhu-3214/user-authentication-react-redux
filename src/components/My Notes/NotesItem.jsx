@@ -24,7 +24,10 @@ const NotesItem = ({ ...note }) => {
    return (
       <>
          {toggle ? (
-            <div className="border border-4 p-3 bg-white">
+            <div
+               className="p-3 bg-white"
+               style={{ boxShadow: '0px 5px 4px -1px rgba(69,63,63,0.75)' }}
+            >
                <EditNote
                   id={note._id}
                   title={note.title}
@@ -33,16 +36,19 @@ const NotesItem = ({ ...note }) => {
                />
                <button
                   className="btn btn-secondary ms-5"
-                  style={{}}
                   onClick={handleToggle}
                >
                   cancel
                </button>
             </div>
          ) : (
-            <div className="border border-4 my-3 p-3 bg-white">
+            <div
+               className="my-3 p-3 bg-white"
+               style={{ boxShadow: '0px 5px 4px -1px rgba(69,63,63,0.75)' }}
+            >
                <h2
-                  className="text-primary text-capitalize"
+                  className="text-capitalize"
+                  style={{ color: '#5e35b1', cursor: 'pointer' }}
                   onClick={() => handleClick(note._id)}
                >
                   {note.title}
