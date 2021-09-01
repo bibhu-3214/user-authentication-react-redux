@@ -12,9 +12,7 @@ const AddNotes = (props) => {
 
    return (
       <div>
-         <div>
-            <NoteForm formSubmission={formSubmission} />
-         </div>
+         <NoteForm formSubmission={formSubmission} />
       </div>
    );
 };
