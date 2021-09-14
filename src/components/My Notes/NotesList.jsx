@@ -5,7 +5,6 @@ import NotesItem from './NotesItem';
 
 const NotesList = (props) => {
    const notes = useSelector((state) => state.notes);
-
    const dispatch = useDispatch();
 
    useEffect(() => {

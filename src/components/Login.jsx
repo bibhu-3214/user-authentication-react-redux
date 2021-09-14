@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { login } from '../Redux/actions/usersAction';
 
 const Login = (props) => {
-   const [email, setEmail] = useState('');
-   const [password, setPassword] = useState('');
+   const [email, setEmail] = useState('bibhu098@gmail.com');
+   const [password, setPassword] = useState('bibhu1920');
 
    const dispatch = useDispatch();
 
