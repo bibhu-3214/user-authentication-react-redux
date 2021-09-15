@@ -11,25 +11,22 @@ const Account = () => {
                     'x-auth': localStorage.getItem('token'),
                 },
             })
-            .then((resp) => {
+            .then(resp => {
                 const result = resp.data;
                 setUser(result);
             })
-            .catch((err) => {
+            .catch(err => {
                 alert(err.message);
             });
     }, []);
 
     return (
-        <div
-            className="container w-50 text-center mt-5"
-            style={{ backgroundColor: '#eeeeee', padding: '20px' }}
-        >
+        <div className='container w-50 text-center mt-5' style={{ backgroundColor: '#eeeeee', padding: '20px' }}>
             <h2>
-                Username <p className="text-primary">{user.username}</p>
+                Username <p className='text-primary'>{user.username}</p>
             </h2>
             <h2>
-                Email <p className="text-primary">{user.email}</p>
+                Email <p className='text-primary'>{user.email}</p>
             </h2>
         </div>
     );
